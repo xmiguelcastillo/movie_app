@@ -16,23 +16,23 @@ export interface TMDBResponse {
   results: Movie[];
 }
 
-export const TMDB_MOVIE_DETAILS = async (): Promise<TMDBResponse | null> => {
-  try {
-    const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/`, {
-      headers: TMDB_CONFIG.headers,
-    });
-
-    if (!response.ok) {
-      throw new Error("Cannot fetch new movie releases");
-    }
-
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("TMDB fetch error:", error);
-    return null;
-  }
-};
+// export const TMDB_MOVIE_DETAILS = async (): Promise<TMDBResponse | null> => {
+//   try {
+//     const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/`, {
+//       headers: TMDB_CONFIG.headers,
+//     });
+//
+//     if (!response.ok) {
+//       throw new Error("Cannot fetch new movie releases");
+//     }
+//
+//     const data = await response.json();
+//     return data;
+//   } catch (error) {
+//     console.error("TMDB fetch error:", error);
+//     return null;
+//   }
+// };
 export const TMDB_NEW_RELEASES = async (): Promise<TMDBResponse | null> => {
   try {
     const response = await fetch(`${TMDB_CONFIG.BASE_URL}/movie/now_playing`, {
